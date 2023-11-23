@@ -5,8 +5,12 @@
 ## 基本内容
 ### 基本的复数概念与几何
 - `ComplexPlane.py`
-  复平面的建立与复数的可视化。
+  复平面的建立与复数的可视化.
 - `AComplexNumber.py`
-复数的实部、虚部和模的展示。
+复数的实部、虚部和模的展示.
+
+### Euler公式
+- `PowerSeriesEuler.py`
+Euler公式的幂级数观点.
 
 ## 复变函数（解析函数）
