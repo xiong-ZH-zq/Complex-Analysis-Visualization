@@ -1,5 +1,6 @@
 # Complex-Analysis-Visualization
 ![Static Badge](https://img.shields.io/badge/Visualization-Python-blue)
+![Static Badge](https://img.shields.io/badge/Animation-Manim-blue?link=https%3A%2F%2Fgithub.com%2FManimCommunity%2Fmanim)
 
 ----
 基于多种编程语言的复分析可视化学习/Complex Analysis Visualization based on various programming languages
