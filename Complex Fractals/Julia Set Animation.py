@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from matplotlib import animation
-import plotly.graph_objects as go
 import torch
 def julia_set(Z, c, max_iter):
     """计算 Julia 集
