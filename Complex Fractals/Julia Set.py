@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
 import torch    # 使用 torch 加速
 
 def julia_set(Z, c, max_iter):
