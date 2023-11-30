@@ -12,12 +12,12 @@
 
 以下列出使用的工具以便配置。
 ## Python
-- ![Manim Community](https://github.com/ManimCommunity/manim)
-- ![Pytorch](https://github.com/pytorch/pytorch)
-- ![Matplotlib](https://github.com/matplotlib/matplotlib)
+- [Manim Community](https://github.com/ManimCommunity/manim)
+- [Pytorch](https://github.com/pytorch/pytorch)
+- [Matplotlib](https://github.com/matplotlib/matplotlib)
 
 ## C语言
-- ![Raylib](https://github.com/raysan5/raylib)
+- [Raylib](https://github.com/raysan5/raylib)
 
 
 
