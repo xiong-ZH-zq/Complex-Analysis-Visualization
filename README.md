@@ -1,6 +1,7 @@
 # Complex_Analysis_in_Manim
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![C Badge](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Jupyter Badge](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)
 
 -----
 This is a repository about Complex Analysis Visualization based on Manim Library. As we only study complex analysis for only one semester, some complicated contents will be ignored.
