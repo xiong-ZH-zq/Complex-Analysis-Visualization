@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import torch    # 使用 torch 加速
 
 def julia_set(Z, c, max_iter):
-    """计算 Julia 集
-    :param Z: 复数集
-    :param c: 迭代常数
-    :param max_iter: 最大迭代次数
+    """Get julia set array
+    :param Z: The surface complex set
+    :param c: The constant
+    :param max_iter: The max iteration number
     """
     out = torch.zeros_like(Z, dtype=torch.float32) + max_iter
     c = torch.zeros_like(Z)+c
@@ -27,10 +27,9 @@ if __name__ == '__main__':
     X, Y = torch.meshgrid(x, y)
     Z = X + 1j*Y
     
-    # 生成 Julia 集
     julia = julia_set(Z, c, max_iter)
     
-    # 显示 Julia 集的图像
+    # Show julia set image
     fig = plt.figure(dpi = 480)
     fig.subplots_adjust(top=1, bottom=0, left=0, right=1)
     ax = plt.subplot()
