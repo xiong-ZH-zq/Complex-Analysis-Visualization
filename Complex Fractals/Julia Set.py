@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import torch    # 使用 torch 加速
+import torch
 
 def julia_set(Z, c, max_iter):
     """Get julia set array
