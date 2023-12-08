@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 from matplotlib import animation
-import torch
+import torch    # use torch or cupy to accelerate
 def julia_set(Z, c, max_iter):
-    """计算 Julia 集
-    :param Z: 复数集
-    :param c: 迭代常数
-    :param max_iter: 最大迭代次数
+    """Get julia set array
+    :param Z: The surface complex set
+    :param c: The constant
+    :param max_iter: The max iteration number
     """
     out = torch.zeros_like(Z, dtype=torch.float32) + max_iter
     c = torch.zeros_like(Z)+c
@@ -33,14 +33,12 @@ image = plt.imshow(julia, cmap="hot")
 plt.axis("off")
 # plt.show()
 
-# 定义更新帧的函数
 def update_frame(num):
     julia = julia_set(Z, c-0.01j*num, max_iter)
-    # 更新图像数据
+    # update julia array
     image.set_array(julia)
-    # 返回一个包含更新的图形对象的元组
     return image,
 
-# 创建动画对象
+# Show and save the video. It will be long time to generate
 ani = animation.FuncAnimation(fig, update_frame, frames=range(100), interval = 100, blit=True)
 ani.save(filename='julia.mp4',writer='ffmpeg',fps = 24)
