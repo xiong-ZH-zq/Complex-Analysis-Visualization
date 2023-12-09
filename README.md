@@ -1,3 +1,4 @@
+![cover](./ComplexAnalysisCover_ManimCE_v0.17.3.gif)
 # Complex_Analysis_Visualization
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![C Badge](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
