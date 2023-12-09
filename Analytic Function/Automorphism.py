@@ -195,7 +195,7 @@ class Automorphism(Scene):
         self.play(MoveToTarget(phi_z))
         self.wait()
 
-        changing_part = Tex(
+        changing_part = [
             r"$\dfrac{a-z}{1-\overline{a}z}$",
             r"$z+\dfrac{1}{-\overline{a}}$",
             r"$\dfrac{-\overline{a}z+1}{-\overline{a}}$",
@@ -206,12 +206,14 @@ class Automorphism(Scene):
             r"$\dfrac{a\overline{a}-1+1-\overline{a}z}{(-\overline{a}z+1)\cdot\overline{a}}$",
             r"$\dfrac{a\overline{a}-\overline{a}z}{(-\overline{a}z+1)\cdot\overline{a}}$",
             r"$\dfrac{a-z}{1-\overline{a}z}$",
-        )
+        ]
         
         for i in range(0,10):
-            part = changing_part[i].next_to(phi_z,RIGHT)
+            part = Tex(changing_part[i]).next_to(phi_z)
             self.play(Write(part),run_time = 0.5)
             self.wait()
+            if i == 9:
+                break
             self.play(FadeOut(part))
         
         self.wait()
