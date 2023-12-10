@@ -40,8 +40,8 @@ class Automorphism(Scene):
         self.play(DrawBorderThenFill(circle))  # unit circle
 
         # the line that form the angle
-        line1 = Line([3.0, 0.0, 0.0], [4.0, 0.0, 0.0]).set_stroke(width=0.5)
-        line2 = Line([3.0, 0.0, 0.0], [4.0, 0.0, 0.0]).set_stroke(width=0.5)
+        line1 = Line([3.0, 0.0, 0.0], [4.0, 0.0, 0.0]).set_stroke(width=1.5)
+        line2 = Line([3.0, 0.0, 0.0], [4.0, 0.0, 0.0]).set_stroke(width=1.5)
         line3 = line2.copy()  
 
         center = [3.0, 0.0, 0.0]  # rotating center
@@ -57,7 +57,7 @@ class Automorphism(Scene):
         )
 
         self.wait()
-        self.add(line1, line2, angle, tex)
+        self.play(Create(line1),Create(line2), Create(angle), Create(tex))
         self.wait()
 
         line2.add_updater(
@@ -84,8 +84,6 @@ class Automorphism(Scene):
         self.play(FadeOut(line1, line2, angle, tex, circle))
         self.play(FadeOut(first_part_formula))
 
-
-
         # Second part: the bijection $\phi(x)$
         # subpart1
         second_part_intro = Tex(
@@ -103,8 +101,7 @@ class Automorphism(Scene):
 
         self.play(FadeIn(circle1))
         self.wait()
-        self.play(Rotate(circle1, np.pi,
-                  axis=RIGHT + DOWN), run_time=3)
+        self.play(Rotate(circle1, np.pi,axis=RIGHT + DOWN), run_time=3)
         self.wait()
 
         self.play(FadeOut(circle1))
@@ -130,10 +127,8 @@ class Automorphism(Scene):
 
         point1 = Dot([0.3-2.0, 0.0, 0.0], color=RED, radius=0.08)
         point2 = Dot([2.0, 0.0, 0.0], color=RED, radius=0.08)
-        tex1 = DecimalNumber(complex(0.3, 0), color=WHITE,
-                             font_size=16).next_to(point1)
-        tex2 = DecimalNumber(complex(0, 0), color=WHITE,
-                             font_size=16).next_to(point2)
+        tex1 = DecimalNumber(complex(0.3, 0), color=WHITE,font_size=16).next_to(point1)
+        tex2 = DecimalNumber(complex(0, 0), color=WHITE,font_size=16).next_to(point2)
 
         thetad = ValueTracker(0.0)  # the valuetracker of initial angle
 
@@ -207,14 +202,16 @@ class Automorphism(Scene):
             r"$\dfrac{a\overline{a}-\overline{a}z}{(-\overline{a}z+1)\cdot\overline{a}}$",
             r"$\dfrac{a-z}{1-\overline{a}z}$",
         ]
-        
-        for i in range(0,10):
+        prev_part = Tex(changing_part[0]).next_to(phi_z)
+        self.play(Write(prev_part),run_time = 0.5)
+        self.wait()
+        for i in range(1,10):
             part = Tex(changing_part[i]).next_to(phi_z)
-            self.play(Write(part),run_time = 0.5)
+            self.play(ReplacementTransform(prev_part,part),run_time = 0.5)
             self.wait()
             if i == 9:
                 break
-            self.play(FadeOut(part))
+            prev_part = part
         
         self.wait()
         self.ClearUp()
